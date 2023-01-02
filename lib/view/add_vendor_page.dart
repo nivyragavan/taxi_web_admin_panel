@@ -281,6 +281,7 @@ class AddVendorPage extends StatelessWidget {
     return ListView.separated(
         itemCount: 2,
         shrinkWrap: true,
+        physics: const ScrollPhysics(),
         itemBuilder: (context, index) {
           return Column(
             children: [
@@ -449,15 +450,13 @@ class AddVendorPage extends StatelessWidget {
                     color: Colors.white,
                   )),
               const SizedBox(height: 10),
-              SizedBox(
-                height: 40,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      border: const OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: green)),
-                      hintText: 'Reason of Rejection'),
-                ),
+              TextFormField(
+                decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
+                    border: const OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: green)),
+                    hintText: 'Reason of Rejection'),
               ),
               const SizedBox(height: 10),
               ElevatedButton(
