@@ -86,7 +86,7 @@ class _OverviewPageState extends State<OverviewPage> {
               if (ResponsiveWidget.isLargeScreen(context) ||
                   ResponsiveWidget.isMediumScreen(context))
                 if (ResponsiveWidget.isCustomSize(context))
-                  buildOverviewCardsMediumScreen(context)
+                  buildOverviewCardsLargeScreen(context)
                 else
                   buildOverviewCardsLargeScreen(context)
               else
