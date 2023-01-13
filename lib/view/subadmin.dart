@@ -69,12 +69,8 @@ class _SubAdminPageState extends State<SubAdminPage> {
           Expanded(
               child: ListView(
             children: [
-              if (ResponsiveWidget.isLargeScreen(context) ||
-                  ResponsiveWidget.isMediumScreen(context))
-                if (ResponsiveWidget.isCustomSize(context))
-                  buildAddSubAdminLarge(context)
-                else
-                  buildAddSubAdminLarge(context)
+              if (ResponsiveWidget.isLargeScreen(context))
+                buildAddSubAdminLarge(context)
               else
                 buildAddSubAdminSmall(context),
               const SizedBox(height: 50),

@@ -83,12 +83,8 @@ class _OverviewPageState extends State<OverviewPage> {
           Expanded(
               child: ListView(
             children: [
-              if (ResponsiveWidget.isLargeScreen(context) ||
-                  ResponsiveWidget.isMediumScreen(context))
-                if (ResponsiveWidget.isCustomSize(context))
-                  buildOverviewCardsLargeScreen(context)
-                else
-                  buildOverviewCardsLargeScreen(context)
+              if (ResponsiveWidget.isLargeScreen(context))
+                buildOverviewCardsLargeScreen(context)
               else
                 buildOverviewCardsSmallScreen(context),
               if (!ResponsiveWidget.isSmallScreen(context))
@@ -103,14 +99,6 @@ class _OverviewPageState extends State<OverviewPage> {
                 buildDriverSectionLarge(context)
               else
                 buildDriverSectionSmall(context),
-              const SizedBox(height: 10),
-              CustomText(
-                text: 'Available Drivers',
-                size: 20,
-                color: black,
-                weight: FontWeight.bold,
-              ),
-              const SizedBox(height: 10),
               buildAvailableDriversTable()
             ],
           ))
@@ -119,7 +107,7 @@ class _OverviewPageState extends State<OverviewPage> {
     );
   }
 
-  Widget buildOverviewCardsLargeScreen(BuildContext context) {
+  buildOverviewCardsLargeScreen(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
 
     return Row(
@@ -161,58 +149,7 @@ class _OverviewPageState extends State<OverviewPage> {
     );
   }
 
-  Widget buildOverviewCardsMediumScreen(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
-
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Row(
-          children: [
-            InfoCard(
-              title: "Rides in progress",
-              value: "7",
-              onTap: () {},
-              topColor: Colors.orange,
-            ),
-            SizedBox(
-              width: _width / 64,
-            ),
-            InfoCard(
-              title: "Rides Completed",
-              value: "17",
-              topColor: Colors.lightGreen,
-              onTap: () {},
-            ),
-          ],
-        ),
-        SizedBox(
-          height: _width / 64,
-        ),
-        Row(
-          children: [
-            InfoCard(
-              title: "Cancelled Rides",
-              value: "3",
-              topColor: Colors.redAccent,
-              onTap: () {},
-            ),
-            SizedBox(
-              width: _width / 64,
-            ),
-            InfoCard(
-              title: "Scheduled Rides",
-              value: "32",
-              onTap: () {},
-              topColor: active,
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget buildOverviewCardsSmallScreen(BuildContext context) {
+  buildOverviewCardsSmallScreen(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
 
     return Container(
@@ -254,7 +191,7 @@ class _OverviewPageState extends State<OverviewPage> {
     );
   }
 
-  Widget buildRevenueSectionLarge(BuildContext context) {
+  buildRevenueSectionLarge(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
       margin: const EdgeInsets.symmetric(vertical: 30),
@@ -341,7 +278,7 @@ class _OverviewPageState extends State<OverviewPage> {
     );
   }
 
-  Widget buildUserSectionLarge(BuildContext context) {
+  buildUserSectionLarge(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
       margin: const EdgeInsets.symmetric(vertical: 30),
@@ -428,7 +365,7 @@ class _OverviewPageState extends State<OverviewPage> {
     );
   }
 
-  Widget buildDriverSectionLarge(BuildContext context) {
+  buildDriverSectionLarge(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
       margin: const EdgeInsets.symmetric(vertical: 30),
@@ -515,7 +452,7 @@ class _OverviewPageState extends State<OverviewPage> {
     );
   }
 
-  Widget buildRevenueSectionSmall(BuildContext context) {
+  buildRevenueSectionSmall(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
       margin: const EdgeInsets.symmetric(vertical: 30),
@@ -601,7 +538,7 @@ class _OverviewPageState extends State<OverviewPage> {
     );
   }
 
-  Widget buildUserSectionSmall(BuildContext context) {
+  buildUserSectionSmall(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
       margin: const EdgeInsets.symmetric(vertical: 30),
@@ -687,7 +624,7 @@ class _OverviewPageState extends State<OverviewPage> {
     );
   }
 
-  Widget buildDriverSectionSmall(BuildContext context) {
+  buildDriverSectionSmall(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(24),
       margin: const EdgeInsets.symmetric(vertical: 30),
