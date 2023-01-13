@@ -99,6 +99,13 @@ class _OverviewPageState extends State<OverviewPage> {
                 buildDriverSectionLarge(context)
               else
                 buildDriverSectionSmall(context),
+              CustomText(
+                text: 'Available Drivers',
+                size: 20,
+                weight: FontWeight.bold,
+                color: dark,
+              ),
+              const SizedBox(height: 20),
               buildAvailableDriversTable()
             ],
           ))
